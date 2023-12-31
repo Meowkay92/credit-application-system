@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.br.CPF
 import java.math.BigDecimal
 
 data class CustomerDto(
-    @NotEmpty(message = "Invalid Input") val firsName: String,
+    @NotEmpty(message = "Invalid Input") val firstName: String,
     @NotEmpty(message = "Invalid Input") val lastName: String,
     @CPF(message = "This is invalid CPF")
     val cpf: String,
@@ -18,10 +18,10 @@ data class CustomerDto(
     @NotEmpty(message = "Invalid Input") val email: String,
     @NotEmpty(message = "Invalid Input") val password: String,
     @NotEmpty(message = "Invalid Input") val zipCode: String,
-    @NotEmpty(message = "Invalid Input") val street: String
+    @NotEmpty(message = "Invalid Input") val street: String,
 ) {
     fun toEntity(): Customer = Customer(
-        firstName = this.firsName,
+        firstName = this.firstName,
         lastName = this.lastName,
         cpf = this.cpf,
         income = this.income,
